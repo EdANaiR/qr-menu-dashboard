@@ -1,3 +1,5 @@
+"use client";
+
 import QRGenerator from "@/components/QRGenerator";
 import { Container, Typography } from "@mui/material";
 
