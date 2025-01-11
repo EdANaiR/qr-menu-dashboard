@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Footer from "@/components/Footer";
@@ -246,7 +246,7 @@ const LogoContainer = styled("div")({
   },
 });
 
-export default function Home() {
+function HomeContent() {
   const searchParams = useSearchParams();
   const tableNumber = searchParams.get("table") || "1";
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
@@ -444,5 +444,13 @@ export default function Home() {
       <WaiterCallButton tableNumber={tableNumber} />
       <Footer />
     </>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
   );
 }
