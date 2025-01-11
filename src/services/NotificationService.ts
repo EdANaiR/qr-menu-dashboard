@@ -60,8 +60,8 @@ export const NotificationService = {
     return supabase
       .channel("waiter_calls")
       .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "waiter_calls" } as const,
+        "postgres_changes" as const,
+        { event: "INSERT", schema: "public", table: "waiter_calls" },
         callback
       )
       .subscribe();

@@ -15,7 +15,6 @@ import { styled } from "@mui/material/styles";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useState } from "react";
 import Image from "next/image";
-import { useLanguage } from "@/context/LanguageContext";
 import type { Language } from "@/context/LanguageContext";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
