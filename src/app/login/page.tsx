@@ -36,7 +36,7 @@ export default function LoginPage() {
       } else {
         setError("Kullanıcı adı veya şifre hatalı");
       }
-    } catch (err) {
+    } catch (error) {
       setError("Giriş yapılırken bir hata oluştu");
     }
   };
